@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SquareMovement : MonoBehaviour
 {
-
     public float speed = 5f; // Speed of the movement
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        // Get input from arrow keys
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        Vector3 position = transform.position;
 
-        // Calculate movement direction
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        // Update the position of the player based on the input
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) {
+            position.x -= speed * Time.deltaTime;
+        }
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) {
+            position.x += speed * Time.deltaTime;
+        }
 
-        // Apply movement
-        GetComponent<Rigidbody2D>().velocity = movement * speed;
+        // Clamp the position of the character so they do not go out of bounds
+        Vector3 leftEdge = Camera.main.ViewportToWorldPoint(Vector3.zero);
+        Vector3 rightEdge = Camera.main.ViewportToWorldPoint(Vector3.right);
+        position.x = Mathf.Clamp(position.x, leftEdge.x, rightEdge.x);
+
+        // Set the new position
+        transform.position = position;
     }
 }

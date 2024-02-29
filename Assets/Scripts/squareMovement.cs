@@ -5,6 +5,7 @@ using UnityEngine;
 public class SquareMovement : MonoBehaviour
 {
     public float speed = 5f; // Speed of the movement
+    public Projectile laserPrefab;
 
     void Update()
     {
@@ -25,5 +26,14 @@ public class SquareMovement : MonoBehaviour
 
         // Set the new position
         transform.position = position;
+
+        if (Input.GetKeyDown(KeyCode.Space)){
+            shoot();
+        }
+
+    }
+
+    private void shoot(){
+        Instantiate(laserPrefab, transform.position, Quaternion.identity);
     }
 }

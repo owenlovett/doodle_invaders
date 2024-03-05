@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 1099183968}
   - component: {fileID: 1099183970}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c4fe7c60b5ad4532ae33a358b9850d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   laserPrefab: {fileID: 5345232037664698784, guid: 4edbba820d2f148d3ae4a4eb94b9ce3c, type: 3}
 --- !u!61 &1099183970
 BoxCollider2D:

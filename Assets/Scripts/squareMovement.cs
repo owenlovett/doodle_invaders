@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SquareMovement : MonoBehaviour
 {
-    public float speed = 5f; // Speed of the movement
+    public float speed = 10f; // Speed of the movement
     public Projectile laserPrefab;
 
     void Update()

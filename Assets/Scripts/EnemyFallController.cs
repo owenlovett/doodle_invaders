@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFallController : MonoBehaviour
 {
-    float wait = 0.1f;
+    float wait = 0.75f;
     public GameObject enemyObject;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +14,6 @@ public class EnemyFallController : MonoBehaviour
 
     void Fall()
     {
-        Instantiate(enemyObject, new Vector3(Random.Range(-10, 10), 10, 0), Quaternion.identity);
+        Instantiate(enemyObject, new Vector3(Random.Range(-8, 8), 10, 0), Quaternion.identity);
     }
 }

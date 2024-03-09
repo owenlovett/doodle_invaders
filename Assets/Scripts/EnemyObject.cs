@@ -6,10 +6,9 @@ public class EnemyObject : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        Destroy(this.gameObject);
-        if (coll.gameObject.CompareTag("Ground"))
+        if (coll.gameObject.CompareTag("Ground") || coll.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hit Ground");
+            Destroy(this.gameObject);
         }
     }
 }
